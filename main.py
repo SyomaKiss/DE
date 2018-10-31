@@ -6,10 +6,16 @@ import math
 #TODO find point of discontinuity in general case
 def check_discontinuity_points(x,xi,xf):
     bool = 0
-    n = (xf - xi) // math.pi
-    left_asymptote = xi - xi % (math.pi/2)
+    n = int((xf - xi) // (math.pi/2))
+    n2 = int((xi) // math.pi)
+    print(n2)
+    first_as = (n2)*math.pi - math.pi/2
+    # while first_as <= x0:
+    #     first_as+=math.pi
+    print(first_as, x0)
+    print("xi: ",xi, " xf: ",xf, " n: ",n)
     for i in range(-n,n):
-        current_x = math.pi(1/2 + i)
+        current_x = math.pi*(1/2 + i)
         if current_x < xi: continue
         if current_x > xf: break
         # if (abs(current_x - x)) <
@@ -20,9 +26,9 @@ def f(x, y):
 def exact_f(x):
     return (-3/4*np.sin(x) - 9/8*x*(np.cos(x)**-3) - 9/16*np.sin(2*x)*(np.cos(x)**-3) + np.cos(x)**-3)**3
 
-print(exact_f(0))
 
-x0 = 0
+
+x0 = -4
 y0 = 1
 x_max = 8
 number_of_steps = 101
@@ -30,6 +36,8 @@ step = (x_max - x0) / (number_of_steps - 1)
 x = np.linspace(x0, x_max, number_of_steps)
 y = np.zeros([number_of_steps])
 exact_y = np.zeros([number_of_steps])
+
+#print(exact_f(x0))
 
 y[0] = y0
 for i in range(1,number_of_steps):
@@ -50,5 +58,7 @@ plt.xlabel("X")
 plt.ylabel("Y")
 plt.ylim(bottom= -10000, top = 10000)
 plt.title("Euler's method")
-plt.show()
+# plt.show()
+
+check_discontinuity_points(x0, x0, x_max)
 
