@@ -1,4 +1,5 @@
 # Computational practicum
+![image](images/approximation.png)
 
 [image1](images/approximation.png)
 [image2](images/local errors.png)
