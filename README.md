@@ -12,7 +12,7 @@ different precisions.
 ![image](images/approximation.png)
 
 ### Local errors
-![image](images/local errors.png)
+![image](images/local_errors.png)
 
 ### Global errors for different steps
-![image](images/global errors.png)
+![image](images/global_errors.png)
