@@ -22,7 +22,8 @@ different precisions.
 2. [Improved Euler's method](https://en.wikipedia.org/wiki/Heun%27s_method) O(h^3)
 1. [Runge-Kutta method](https://en.wikipedia.org/wiki/Runge–Kutta_methods) O(h^4)
 
-### Constructed solutions
+Constructed solutions
+---
 Initial conditions can be changed in the header of [main.py](main.py)
 
 ```
@@ -59,19 +60,20 @@ y[i] = y[i - 1] + step / 6 * (k[0] + 2 * k[1] + 2 * k[2] + k[3])
 
 ![image](images/approximation.png)
 
-### Local errors
+Local errors
+---
 Local error represents the difference between exact function and its 
 approximates solution in the particular point.
 ![image](images/local_errors.png)
 
-### Global errors for different steps
+Global errors for different steps
+---
 Global error represents the maximal value of local error for the given grid size.
 ![image](images/global_errors.png)
 
-### Authors
+Authors
+---
 
 Semen Kiselev, 
-
-2nd year Bachelor, 
-
+2nd year Bachelor,
 Innopolis University
