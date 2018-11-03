@@ -8,8 +8,8 @@ x0 = 0      # initial condition
 y0 = 0
 x_max = 3       # the rightmost bound
 number_of_steps = 4
-n_initial = 5       # plot the global error starting from that # of steps
-n_final = 101       # and till this one
+n_initial = 5       # minimal # of steps for plotting global errors
+n_final = 30       # maximal # of steps for plotting global errors
 
 
 def f(x, y):
@@ -144,6 +144,8 @@ def global_errors(x0, y0, x_max, ni, nf):
     :param x0:
     :param y0:
     :param x_max: the rightmost bound
+    :param ni: minimal # of steps
+    :param nf: maximal # of steps
     :return: list of values for x axis which represents # of steps on the given range. The most significant changes
              occur on range from 5 to 30 ([5,6,7,8...])
             list of global errors for each grid size of Euler's method,
