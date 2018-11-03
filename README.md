@@ -68,6 +68,6 @@ approximates solution in the particular point.
 Global error represents the maximal value of local error for the given grid size.
 ![image](images/global_errors.png)
 
-###Authors
+### Authors
 
 Semen Kiselev, 2nd year Bachelor, Innopolis University
