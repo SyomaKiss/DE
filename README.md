@@ -2,9 +2,18 @@
 
 **Initial Value Problem**
 
+```angular2html
+y` = -2y + 4x
+y(0) = 0 
+x belongs to [0;X]
 ```
-y^{\prime} =
-``` 
+**Exact solution**
+```
+y = 2x - 1 + e^(-2x)
+```
+
+
+
 Programming assignment within the Differential Equations course in 
 Innopolis University. The main purpose is to implement solution of given Initial 
 Value Problem using methods of  numerical integration of differential equations with
