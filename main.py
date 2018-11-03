@@ -165,18 +165,16 @@ _, y3, _, local_error3, _ = solve_ivp_with_runge_kutta_method(x0, y0, x_max, num
 
 step_axes, g1, g2, g3 = global_errors(x0, y0, x_max)
 
-
 # plotting the approximated solutions
-plt.plot(x, y1, color='red')        # RED line corresponds to Euler's method
-plt.plot(x, y2, color='green')      # GREEN line corresponds to Improved Euler's method
-plt.plot(x, y3, color='blue')       # BLUE line corresponds to Runge-Kutta method
-plt.plot(x, exact_y, color='black')     # BLACK line corresponds to the original function
+plt.plot(x, y1, color='red')  # RED line corresponds to Euler's method
+plt.plot(x, y2, color='green')  # GREEN line corresponds to Improved Euler's method
+plt.plot(x, y3, color='blue')  # BLUE line corresponds to Runge-Kutta method
+plt.plot(x, exact_y, color='black')  # BLACK line corresponds to the original function
 plt.xlabel("X")
 plt.ylabel("approximated value")
 plt.ylim(bottom=0, top=10)
 plt.title("Euler's method")
 plt.show()
-
 
 # Plotting the local errors for each solution
 plt.plot(x, local_error1, color='red')
@@ -187,7 +185,6 @@ plt.ylabel("Local error")
 plt.ylim(bottom=0, top=3)
 plt.title("Local error on each step for Euler's method")
 plt.show()
-
 
 # plotting global errors for diff # of steps (from 5 to 30)
 plt.plot(step_axes, g1, color='red')
