@@ -70,4 +70,8 @@ Global error represents the maximal value of local error for the given grid size
 
 ### Authors
 
-Semen Kiselev, 2nd year Bachelor, Innopolis University
+Semen Kiselev, 
+
+2nd year Bachelor, 
+
+Innopolis University
