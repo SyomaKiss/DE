@@ -145,7 +145,7 @@ plt.plot(x, local_error2, color='green')
 plt.plot(x, local_error3, color='blue')
 plt.xlabel("X")
 plt.ylabel("Local error")
-plt.ylim(bottom=0, top=0.5)
+plt.ylim(bottom=0, top=3)
 plt.title("Local error on each step for Euler's method")
 plt.show()
 
