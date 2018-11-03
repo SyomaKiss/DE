@@ -3,6 +3,15 @@ from matplotlib import pyplot as plt
 import math
 
 
+# Initial conditions!
+x0 = 0      # initial condition
+y0 = 0
+x_max = 3       # the rightmost bound
+number_of_steps = 4
+n_initial = 5       # plot the global error starting from that # of steps
+n_final = 101       # and till this one
+
+
 def f(x, y):
     """
     The derivative of the function sought in given differential equation
@@ -129,7 +138,7 @@ def solve_ivp_with_runge_kutta_method(x0, y0, x_max, number_of_steps):
     return x, y, exact_y, local_error, global_error
 
 
-def global_errors(x0, y0, x_max):
+def global_errors(x0, y0, x_max, ni, nf):
     """
     This function computes the global error for each of three methods using different grid size
     :param x0:
@@ -141,11 +150,12 @@ def global_errors(x0, y0, x_max):
             list of global errors for each grid size of Improved Euler's method,
             list of global errors for each grid size of Runge-Kutta method
     """
-    g1 = np.zeros([25])
-    g2 = np.zeros([25])
-    g3 = np.zeros([25])
-    x = np.zeros([25])
-    for i in range(5, 30):
+    n = nf - ni
+    g1 = np.zeros([n])
+    g2 = np.zeros([n])
+    g3 = np.zeros([n])
+    x = np.zeros([n])
+    for i in range(ni, nf):
         x[i - 5] = i
         _, _, _, _, g1[i - 5] = solve_ivp_with_eulers_method(x0, y0, x_max, i)
         _, _, _, _, g2[i - 5] = solve_ivp_with_improved_eulers_method(x0, y0, x_max, i)
@@ -153,17 +163,11 @@ def global_errors(x0, y0, x_max):
     return x, g1, g2, g3
 
 
-# Initial conditions!
-x0 = 0
-y0 = 0
-x_max = 3
-number_of_steps = 4
-
 x, y1, exact_y, local_error1, _ = solve_ivp_with_eulers_method(x0, y0, x_max, number_of_steps)
 _, y2, _, local_error2, _ = solve_ivp_with_improved_eulers_method(x0, y0, x_max, number_of_steps)
 _, y3, _, local_error3, _ = solve_ivp_with_runge_kutta_method(x0, y0, x_max, number_of_steps)
 
-step_axes, g1, g2, g3 = global_errors(x0, y0, x_max)
+step_axes, g1, g2, g3 = global_errors(x0, y0, x_max, n_initial, n_final)
 
 # plotting the approximated solutions
 plt.plot(x, y1, color='red')  # RED line corresponds to Euler's method
@@ -202,5 +206,3 @@ plt.title("Global error on steps [5;30] for all methods. \n "
           "red: Euler's method; green: Improved Euler's method \n"
           "blue: Runge-kutta method")
 plt.show()
-
-global_errors(x0, y0, x_max)
